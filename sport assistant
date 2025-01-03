@@ -1,0 +1,25 @@
+import random
+name = input("Welcome user, may I know your name?")
+print("Nice to meet you",name)
+sports = ["cricket", "hockey", "tennis"]
+print("Which sport do you like?",sports)
+sport = input("Enter your sport")
+if sport == "cricket":
+    print("Would you like to get some tips on cricket?(y/n)")
+    ans = input()
+    if ans == "y":
+       print("Always stand facing the bowler with your feet shoulder-width apart.")
+
+elif sport == "hockey":
+    print("Would you like to get some tips on hockey?(y/n)")
+    ans = input()
+    if ans == "y":
+       print("Effective communication with teammates is essential during gameplay.")
+
+elif sport == "tennis":
+    print("Would you like to get some tips on tennis?(y/n)")
+    ans = input()
+    if ans == "y":
+       print("Master the fundamental strokes\ Nail your tennis serve toss\Work on your speed, endurance, and strength.")
+else:
+    print("Invalid choice")
