@@ -1,0 +1,9 @@
+import cv2
+import matplotlib.pyplot as plt
+image = cv2.imread("/Users/samathagandla/Pictures/Photos Library.photoslibrary/resources/derivatives/A/A140F02F-FD7F-485E-A6CB-550917ED9102_1_105_c.jpeg")
+imagergb = cv2.cvtColor(image,cv2.COLOR_BGR2RGB)
+cv2.imshow("rgbimage",imagergb)
+
+
+imagegrey = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
+cv2.imshow("greyimage",imagegrey)
