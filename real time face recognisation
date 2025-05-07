@@ -1,5 +1,5 @@
 import cv2
-face_cascade = cv2.CascadeClassifier("file:///Users/samathagandla/Documents/haar%20frontal%20face.xml")
+face_cascade = cv2.CascadeClassifier(f"/Users/samathagandla/Downloads/haarcascade_frontalface_default (3).xml")
 cap = cv2.VideoCapture(0)
 
 if not cap.isOpened():
@@ -24,4 +24,3 @@ while True:
 
 cap.release()
 cv2.destroyAllWindows()
-done
