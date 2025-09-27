@@ -28,3 +28,40 @@ for m in marks:
     sum = sum + m
 
 print(f"sum = {sum}")
+
+perc = sum / 300 * 100
+print(f"Your percentage is {perc}!")
+
+if perc > 90:
+    grade = 'A'
+
+elif perc >= 70 and perc <= 90:
+    grade = 'B'
+
+elif perc >= 50 and perc <= 70:
+    grade = 'C'
+
+elif perc >= 30 and perc <= 50:
+    grade = 'D'
+
+else:
+    grade = 'E'
+print(f"Your grade is {grade}")
+
+feel = input("How do you feel after getting your grade?")
+
+from textblob import TextBlob
+def sentiment_analysis(text):
+    blob = TextBlob(text)
+    sentiment_score = blob.sentiment.polarity
+
+    if sentiment_score < 0:
+        print("negative_senitiment_detector")
+
+    elif sentiment_score > 0:
+        print("positive_sentiment_detected")
+
+    else:
+        print("neutral_sentiment_detected")
+
+sentiment_analysis(feel)
