@@ -28,5 +28,5 @@ while True:
         print(f"🗣️ Speaking: {text}")
         speak(text)
     else:
-        print("💡 Type something or 'exit' to quit.")
+        print("💡 Type something or 'quit' to exit.")
 quit
