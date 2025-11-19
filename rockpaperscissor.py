@@ -18,8 +18,7 @@ def playgame():
     result = determinewinner(userchoice, computerchoice)
     print (result)
 
-def determinewinner(userchoice, computerchoice):
-    if userchoice == computerchoice:
+
         return ("It's a tie!")
 
     elif (userchoice == "rock" and computerchoice == "scissors") or (userchoice == "paper" and computerchoice == "rock") or (userchoice == "scissors" and computerchoice == "paper"):
