@@ -1,0 +1,79 @@
+pip install google-genai
+
+```
+
+**That's it!** Just one library.
+
+### **What You Already Have:**
+
+- ✅ Python (3.13 installed)
+
+- ✅ VS Code
+
+- ✅ Git & GitHub account
+
+---
+
+## **3️⃣ FILES & FOLDERS TO CREATE**
+
+### **Your Project Structure:**
+
+```
+
+📁 prompt engineering/ ← Your main folder
+
+│
+
+├── 📄 prompt engineering-tut.py ← Main Python script (already have)
+
+│
+
+├── 📄 config.py ← API key storage
+
+│ Content:
+
+│ GEMINI_API_KEY = "your-api-key-here"
+
+│
+
+├── 📄 .gitignore ← Protects sensitive files
+
+│ Content:
+
+│ # API Keys - DO NOT COMMIT
+
+│ config.py
+
+│
+
+│ # Python cache
+
+│ __pycache__/
+
+│ *.pyc
+
+│ *.pyo
+
+│
+
+│ # Virtual environment
+
+│ venv/
+
+│ env/
+
+│
+
+│ # VS Code
+
+│ .vscode/
+
+│
+
+│ # Windows
+
+│ Thumbs.db
+
+│
+
+└── 📁 __pycache__/ ← Auto-generated (ignore this)
