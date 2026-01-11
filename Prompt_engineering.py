@@ -1,7 +1,7 @@
 import google.generativeai as genai
 
 # Configure the API
-genai.configure(api_key="AIzaSyC_5gSbP0J2yd02_SVH6NAyTFDm-h1ObFQ")
+genai.configure(api_key="AIzaSyDpqrB33vTa-F9yPG_IJeyrcaIRLePBcFk")
 
 # Initialize the model globally
 model = genai.GenerativeModel('gemini-pro')
@@ -13,7 +13,7 @@ def generate_response(prompt):
         return response.text
     except Exception as e:
         return f"Error generating response: {str(e)}"
-
+    
 def clear_prompt():
     """Example of a clear, specific prompt."""
     print("\n=== CLEAR PROMPT ===")
@@ -24,7 +24,7 @@ def clear_prompt():
     2. Input validation
     3. Example usage
     """
-    
+
     print(f"Prompt: {clear_prompt_text}")
     response = generate_response(clear_prompt_text)
     print(f"\nResponse:\n{response}")

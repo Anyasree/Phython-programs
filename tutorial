@@ -1,0 +1,237 @@
+from datetime import datetime
+
+def display_header():
+    """Display tutorial header"""
+    print("="*70)
+    print("🤖 AI Prompt Engineering Tutorial")
+    print("="*70)
+    print("\nIn this activity, you will learn about:")
+    print("  • Identifying vague prompts")
+    print("  • Improving clarity")
+    print("  • Adding specificity")
+    print("  • Adding context")
+    print("\n💡 Focus: Human judgment and critical thinking!")
+    print("-"*70)
+
+def analyze_prompt(prompt, prompt_type):
+    """Help students analyze their prompt"""
+    print(f"\n📝 Your {prompt_type} prompt:")
+    print(f"   '{prompt}'")
+    print(f"\n   Length: {len(prompt)} characters")
+    print(f"   Word count: {len(prompt.split())} words")
+
+def provide_feedback(prompt_type):
+    """Provide guidance based on prompt type"""
+    feedback = {
+        "vague": {
+            "issues": [
+                "❌ Too broad - could mean many different things",
+                "❌ Lacks direction - AI doesn't know what aspect to focus on",
+                "❌ No constraints - response could be too general"
+            ],
+            "tips": [
+                "✅ Specify WHAT aspect you're interested in",
+                "✅ Define the SCOPE of your question",
+                "✅ Indicate the LEVEL of detail you want"
+            ]
+        },
+        "specific": {
+            "improvements": [
+                "✅ Narrows the topic to a specific domain",
+                "✅ Focuses on a particular application or use case",
+                "✅ Gives clear direction on what to explain"
+            ],
+            "tips": [
+                "💡 Now add WHEN (time frame)",
+                "💡 Add WHERE (location/context)",
+                "💡 Add WHY (purpose/goal)"
+            ]
+        },
+        "contextual": {
+            "strengths": [
+                "✅ Includes situational details",
+                "✅ Sets timeframe or current state",
+                "✅ Provides background information",
+                "✅ Specifies the perspective or angle"
+            ]
+        }
+    }
+
+    if prompt_type in feedback:
+        for key, items in feedback[prompt_type].items():
+            print(f"\n{key.upper()}:")
+            for item in items:
+                print(f"  {item}")
+
+def compare_prompts(vague, specific, contextual):
+    """Side-by-side comparison of all three prompts"""
+    print("\n" + "="*70)
+    print("📊 PROMPT COMPARISON")
+    print("="*70)
+
+    print("\n1️⃣  VAGUE PROMPT:")
+    print(f"   '{vague}'")
+    print(f"   └─ Issues: Broad, unfocused, lacks direction")
+
+    print("\n2️⃣  SPECIFIC PROMPT:")
+    print(f"   '{specific}'")
+    print(f"   └─ Better: Focused topic, clear direction")
+
+    print("\n3️⃣  CONTEXTUAL PROMPT:")
+    print(f"   '{contextual}'")
+    print(f"   └─ Best: Includes context, timeframe, specific angle")
+
+    print("\n" + "-"*70)
+
+def save_reflection(vague, specific, contextual, ans1, ans2, ans3, ans4):
+    """Save student reflection to a file"""
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    content = f"""
+{'='*70}
+PROMPT ENGINEERING REFLECTION
+{'='*70}
+Date: {timestamp}
+
+YOUR PROMPTS:
+{'='*70}
+
+1. VAGUE PROMPT:
+   {vague}
+
+2. SPECIFIC PROMPT:
+   {specific}
+
+3. CONTEXTUAL PROMPT:
+   {contextual}
+
+REFLECTION ANSWERS:
+{'='*70}
+
+Question 1: How did your prompt change from vague to specific?
+{ans1}
+
+Question 2: What context did you add in Step 3?
+{ans2}
+
+Question 3: Which prompt would give you the most useful AI response? Why?
+{ans3}
+
+Question 4: What patterns do you notice in good prompt engineering?
+{ans4}
+
+{'='*70}
+END OF REFLECTION
+{'='*70}
+"""
+
+    try:
+        with open("prompt_reflection.txt", "w", encoding="utf-8") as f:
+            f.write(content)
+        print("\n✅ Reflection saved to 'prompt_reflection.txt'")
+    except Exception as e:
+        print(f"\n⚠️ Could not save file: {e}")
+
+def prompt_engineering_tutorial():
+    """Main tutorial function - no API needed"""
+    display_header()
+
+    # Step 1: Vague Prompt
+    print("\n" + "="*70)
+    print("STEP 1: Start with a Vague Prompt")
+    print("="*70)
+    print("\nExample vague prompts:")
+    print("  • 'Tell me about technology'")
+    print("  • 'Explain AI'")
+    print("  • 'What is climate change?'")
+
+    vague_prompt = input("\n➤ Enter YOUR vague prompt: ").strip()
+    analyze_prompt(vague_prompt, "vague")
+    provide_feedback("vague")
+
+    input("\n⏸️  Press Enter to continue to Step 2...")
+
+    # Step 2: Specific Prompt
+    print("\n" + "="*70)
+    print("STEP 2: Make it Specific")
+    print("="*70)
+    print("\nExample transformations:")
+    print("  • 'Tell me about technology'")
+    print("    → 'Explain how AI works in self-driving cars'")
+    print("\n  • 'Explain AI'")
+    print("    → 'Describe how machine learning algorithms classify images'")
+
+    print(f"\n📝 Your vague prompt was: '{vague_prompt}'")
+    specific_prompt = input("\n➤ Now make it SPECIFIC: ").strip()
+    analyze_prompt(specific_prompt, "specific")
+    provide_feedback("specific")
+
+    input("\n⏸️  Press Enter to continue to Step 3...")
+
+    # Step 3: Contextual Prompt
+    print("\n" + "="*70)
+    print("STEP 3: Add Context")
+    print("="*70)
+    print("\nExample context additions:")
+    print("  • Time: 'Given recent advancements in 2024...'")
+    print("  • Situation: 'For a high school science project...'")
+    print("  • Purpose: 'To understand real-time decision making...'")
+    print("  • Constraints: 'Explain in simple terms for beginners...'")
+
+    print(f"\n📝 Your specific prompt was: '{specific_prompt}'")
+    contextual_prompt = input("\n➤ Now add CONTEXT: ").strip()
+    analyze_prompt(contextual_prompt, "contextual")
+    provide_feedback("contextual")
+
+    # Comparison
+    compare_prompts(vague_prompt, specific_prompt, contextual_prompt)
+
+    # Reflection with answers
+    print("\n" + "="*70)
+    print("🤔 REFLECTION QUESTIONS")
+    print("="*70)
+    print("\nPlease answer these questions thoughtfully.")
+    print("Your answers will be saved for your records.\n")
+
+    print("-"*70)
+    print("\n1. How did your prompt change from vague to specific?")
+    print("   Think about: What did you narrow down? What did you clarify?")
+    answer1 = input("\n➤ Your answer: ").strip()
+
+    print("\n" + "-"*70)
+    print("\n2. What context did you add in Step 3?")
+    print("   Think about: Time, place, purpose, constraints, or perspective?")
+    answer2 = input("\n➤ Your answer: ").strip()
+
+    print("\n" + "-"*70)
+    print("\n3. Which prompt would give you the most useful AI response? Why?")
+    print("   Think about: Relevance, detail, accuracy, usefulness")
+    answer3 = input("\n➤ Your answer: ").strip()
+
+    print("\n" + "-"*70)
+    print("\n4. What patterns do you notice in good prompt engineering?")
+    print("   Think about: What makes prompts effective?")
+    answer4 = input("\n➤ Your answer: ").strip()
+
+    # Save everything
+    save_reflection(vague_prompt, specific_prompt, contextual_prompt,
+                   answer1, answer2, answer3, answer4)
+
+    # Completion
+    print("\n" + "="*70)
+    print("✨ Tutorial Complete!")
+    print("="*70)
+    print("\n🎯 Key Takeaways:")
+    print("  1. Vague prompts → generic responses")
+    print("  2. Specific prompts → focused responses")
+    print("  3. Contextual prompts → tailored, relevant responses")
+    print("\n💡 Practice these skills every time you use AI!")
+    print("="*70)
+
+if __name__ == "__main__":
+    try:
+        prompt_engineering_tutorial()
+    except KeyboardInterrupt:
+        print("\n\n👋 Tutorial interrupted. Goodbye!")
+    except Exception as e:
+        print(f"\n❌ Error: {e}")
