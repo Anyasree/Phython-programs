@@ -1,63 +1,33 @@
 import streamlit as st
-
 from google import genai
-
 from google.genai import types
-
 import config
-
 import io
-
-
 
 # Initialize Gemini API client
 
 client = genai.Client(api_key=config.GEMINI_API_KEY)
-
-
-
 def generate_response(prompt: str, temperature: float = 0.3) -> str:
-
     """Generate response using Gemini API."""
-
     try:
-
         contents = [types.Content(role="user", parts=[types.Part.from_text(text=prompt)])]
-
         config_params = types.GenerateContentConfig(temperature=temperature)
-
         response = client.models.generate_content(
-
             model="gemini-2.0-flash", contents=contents, config=config_params)
-
         return response.text
-
     except Exception as e:
-
         return f"Error: {str(e)}"
 
-
-
 def setup_ui():
-
     st.set_page_config(page_title="AI Teaching Assistant", layout="centered")
-
     st.title("???? AI Teaching Assistant")
-
     st.write("Ask me anything about various subjects, and I'll provide an insightful answer.")
 
-
-
     if "history" not in st.session_state:
-
         st.session_state.history = []
 
-
-
     # Buttons in a horizontal layout: Clear and Export
-
     col_clear, col_export = st.columns([1, 2])
-
     with col_clear:
 
         if st.button("???? Clear Conversation"):
