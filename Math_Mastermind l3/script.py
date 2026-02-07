@@ -1,6 +1,6 @@
 import streamlit as st
 from google import genai
-from google.genai import types
+from google.genai import types 
 import config
 import io
 
@@ -17,6 +17,7 @@ def generate_response(prompt: str, temperature: float = 0.3) -> str:
         return response.text
     except Exception as e:
         return f"Error: {str(e)}"
+
 
 def setup_ui():
     st.set_page_config(page_title="AI Teaching Assistant", layout="centered")
