@@ -70,7 +70,6 @@ def setup_ui():
                 file_name="AI_Teaching_Assistant_Conversation.txt",
 
                 mime="text/plain",
-
             )
 
 
