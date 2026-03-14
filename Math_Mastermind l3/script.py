@@ -129,6 +129,7 @@ def setup_ui():
             font-weight: 600;
 
             color: #0a6ebd;
+        
 
             margin-top: 12px;
 
