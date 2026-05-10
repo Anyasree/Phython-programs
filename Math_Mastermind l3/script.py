@@ -41,7 +41,7 @@ def setup_ui():
 
         if st.session_state.history:
 
-            # Prepare conversation text for export
+            # Prepare conversation text for export 
 
             export_text = ""
 
@@ -74,7 +74,7 @@ def setup_ui():
 
 
 
-    # User input
+    # User input 
 
     user_input = st.text_input("Enter your question here:")
 
@@ -121,7 +121,7 @@ def setup_ui():
             border-radius: 6px;
 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+            
         }
 
         .question {
