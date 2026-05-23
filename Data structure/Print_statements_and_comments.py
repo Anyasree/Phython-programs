@@ -1,2 +1,2 @@
 print ("Hello Mr Hashmi")
-print (5 + 10)
+print (6 + 7)
