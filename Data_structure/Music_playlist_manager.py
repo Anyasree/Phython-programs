@@ -33,7 +33,7 @@ while True:
         song = input("Enter song to remove:")
         my_playlist.remove_song(song)
     elif choice == "3":
-        my playlist.display()
+        my_playlist.display()
     elif choice == "4":
         del my_playlist
         break
